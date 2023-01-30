@@ -586,6 +586,7 @@ nav ul li {
   color: #232323;
   font-weight: 700;
   font-size: 1.125rem;
+  transition: 0.3s;
 }
 
 #highlight {
@@ -617,9 +618,11 @@ img {
   line-height: 1.1;
   text-decoration: underline;
   color: #e83f43;
+  transition: 0.3s;
 }
 .intro .title .underline {
   color: #232323;
+  transition: 0.3s;
 }
 
 .description {
@@ -672,11 +675,13 @@ button {
 }
 .controls .previous {
   border: 1px solid #232323;
+  transition: 0.3s;
 }
 .controls .next {
   border-top: 1px solid #232323;
   border-right: 1px solid #232323;
   border-bottom: 1px solid #232323;
+  transition: 0.3s;
 }
 .controls .icon {
   position: relative;
@@ -715,6 +720,7 @@ button {
   flex-basis: 15%;
   font-size: 2rem;
   color: #232323;
+  transition: 0.3s;
 }
 .previous:hover .icon, .next:hover .icon {
   transform: scale(1.5);
@@ -735,6 +741,7 @@ button {
   background: #fff;
   transform-origin: 100% 50%;
   animation: revealRight 1s cubic-bezier(0.23, 1, 0.75, 1) forwards;
+  transition: 0.3s;
 }
 
 @keyframes revealRight {
@@ -790,6 +797,7 @@ button {
   padding: 1rem;
   background: #fff;
   text-align: center;
+  transition: 0.3s;
 }
 .flex-nav ul.active {
   display: flex;
@@ -802,6 +810,7 @@ button {
 
   #logo {
     font-size: 1.25rem;
+    transition: 0.3s;
   }
 
   .controls {
@@ -875,4 +884,67 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+.backgrounddm{
+  width: 10000px;
+  height: 10000px;
+  transition: 0.3s;
+  background: rgb(255, 255, 255);
+  position: fixed;
+  z-index: -1;
+  
+}
+input[type=checkbox] {
+  display:none;
+}
+input[type=checkbox] + .backgrounddm~.flex-nav .dmlabel {
+  display:inline-block;
+  background:url(lightflower.png) no-repeat;
+  height: 32px;
+  width: 32px;
+  background-size: 100%;
+  margin-left: 90%;
+  margin-top: 5%;
+  position: relative;
+  padding-top: 220%;
+  
+}
+input[type=checkbox]:checked + .backgrounddm~.flex-nav .dmlabel{
+  background:url(darkflower.png) no-repeat;
+  height: 32px;
+  width: 32px;
+  display:inline-block;
+  background-size: 100%; 
+}
+input:checked + .backgrounddm~.flex-nav #logo{
+  color: white;
+}
+input:checked + .backgrounddm~.flex-nav ul{
+  background: black;
+}
+input:checked + .backgrounddm~.intro-section .intro .title{
+  background: black;
+}
+input:checked + .backgrounddm{
+  background: black;  
+}
+input:checked + .backgrounddm~ .intro-section .image-holder::before{
+  background: black;
+}
+input:checked + .backgrounddm~ .intro-section .intro .title .underline{
+  color: white;
+}
+input:checked + .backgrounddm~.intro-section .next{
+  color: rgb(175, 175, 175);
+}
+input:checked + .backgrounddm~.intro-section .previous{
+  color: rgb(175,175,175);
+}
+input:checked + .backgrounddm~.intro-section .controls .next{
+  border-top: 1px solid rgb(40,40,40);
+  border-right: 1px solid rgb(40,40,40);
+  border-bottom: 1px solid rgb(40,40,40);
+}
+input:checked + .backgrounddm~.intro-section .controls .previous{
+  border: 1px solid rgb(40,40,40);
 }
